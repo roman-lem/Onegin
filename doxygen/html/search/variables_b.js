@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['j_3116',['J',['../_onegin_8txt.html#a774e5f8b9120f7269568eca33254d38d',1,'Onegin.txt']]],
+  ['jackanapes_3117',['jackanapes',['../_sorted_8txt.html#afa2550257b6b3322504a59ab07b0a155',1,'Sorted.txt']]],
+  ['jacobs_3118',['Jacobs',['../_onegin_8txt.html#aef894ce5a86d0b7ab6ce2f26125662a2',1,'Onegin.txt']]],
+  ['jade_3119',['jade',['../_sorted_8txt.html#a075f875daae07eed0fd72d6546336e18',1,'Sorted.txt']]],
+  ['jam_3120',['Jam',['../_onegin_8txt.html#a526cde9fddf3a7c9ea97662f26538ea6',1,'Onegin.txt']]],
+  ['jangle_3121',['jangle',['../_onegin_8txt.html#a5e4907a4790f1956d95af2ac9a6c033e',1,'Onegin.txt']]],
+  ['jealous_3122',['jealous',['../_onegin_8txt.html#a09a8b62e48ae326b92da42a483e718c1',1,'Onegin.txt']]],
+  ['jest_3123',['jest',['../_sorted_8txt.html#a61ec0371c8c2602cc82224847c4275e8',1,'Sorted.txt']]],
+  ['joe_3124',['Joe',['../_onegin_8txt.html#a4d015f02dac3bdb3d899bbb22bc95d3a',1,'Joe():&#160;Onegin.txt'],['../_sorted_8txt.html#a4dd8e54e3d0e0dd84813072d3115596d',1,'Joe():&#160;Sorted.txt']]],
+  ['johannesburg_3125',['Johannesburg',['../_onegin_8txt.html#a1e7e305c27fdd54b1fec3187e58ee791',1,'Onegin.txt']]],
+  ['john_3126',['John',['../_onegin_8txt.html#ad7b0b80ce349b697b1f46010cc368d94',1,'Onegin.txt']]],
+  ['joke_3127',['joke',['../_onegin_8txt.html#a5b5a4f9b0235e854da5e18a4776c4d19',1,'Onegin.txt']]],
+  ['journals_3128',['journals',['../_onegin_8txt.html#a59b3efa595fa002fa965ccc6fdb9d2b1',1,'journals():&#160;Onegin.txt'],['../_sorted_8txt.html#a9a3d7464e4651dabf89fa6eb7398a363',1,'journals():&#160;Sorted.txt']]],
+  ['journey_3129',['Journey',['../_onegin_8txt.html#afd9ee1def3acc08ecb91e47fca72788e',1,'Onegin.txt']]],
+  ['juan_3130',['Juan',['../_onegin_8txt.html#ae0ea1588a5ca3bf896bb146a011c0b8a',1,'Onegin.txt']]],
+  ['judge_3131',['judge',['../_onegin_8txt.html#a2d6d23ddd62b3eb70f4776ef7cce0d42',1,'Onegin.txt']]],
+  ['judgements_3132',['judgements',['../_onegin_8txt.html#a98b8ef6ec1cbcad974ab29ee76a7b178',1,'Onegin.txt']]],
+  ['judges_3133',['judges',['../_sorted_8txt.html#ac4f20b8e64b02169843078aec185a34c',1,'Sorted.txt']]],
+  ['julie_3134',['Julie',['../_onegin_8txt.html#ac5b5e038721b65cd9e136342c0850b65',1,'Onegin.txt']]]
+];
