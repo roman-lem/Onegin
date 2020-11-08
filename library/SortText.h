@@ -2,36 +2,16 @@
 #include <stdlib.h>
 
 /**
-	* @brief This func sort text alphabetaly
-	*
-	*	@param pToStr - Array of pointers on strings
-	*
-	* @param begin - Start index of array
-	*
-	*	@param end - End index of array
-	*/
-
-void TextSort(char** pToStr, int begin, int end);
-
-/**
-	* @brief Unit test for TextSort()
-	*
-	* @return it function printf "abcde", if it work correctly
-	*/
-
-void Test_TextSort();
-
-/**
 	* @brief This func compare strings
 	*
 	*	@param str1 - Pointer on first string
 	*
 	* @param str2 - Pointer on second string
 	*
-	* @return 1, if first second higher, 2, if second, 0, if it same
+	* @return 1, if first second higher, -1, if second, 0, if it same
 	*/
 
-int StrCmp(char* str1, char* str2);
+int StrCmp(const void* str1, const void* str2);
 
 /**
 	* @brief Unit test for StrCmp()

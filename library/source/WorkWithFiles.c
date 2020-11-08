@@ -2,31 +2,69 @@
 
 //---------------------------
 
-char** ReadInBuf(char** pToStr, char* fileBuf, FILE *file, int* nOfStr){
+int sizeOfFile(char* fileName){
+
+	struct stat stBuf;
+	
+	if(stat(fileName, &stBuf) == -1){
+
+		return -1;
+	}
+
+	return stBuf.st_size;
+}
+
+//---------------------------
+
+char** ReadInBuf(char** pToStr, char* fileBuf, char* fileName, int* nOfStr){
+
+	FILE *Text = fopen(fileName, "r");
+
+  if(Text == NULL){
+
+  	printf("Check existing of file \"%s\"\n", fileName);
+
+  	return pToStr;
+  }
+
+  int TextSize = sizeOfFile(fileName);
+
+  if(TextSize == -1){
+
+  	printf("Imposible to identify size of file %s\n", fileName);
+  }
+
+  fileBuf = (char*) calloc(TextSize + 1, sizeof(*fileBuf));
+  
+	fread(fileBuf, sizeof(char), TextSize, Text);
+
+	fclose(Text);
+
+	pToStr = (char**) calloc(1, sizeof(*pToStr));
+
+	if(pToStr == NULL){
+
+		printf("Dont possible to give memory for array of pointers\n");
+
+		return pToStr;
+	}
 
   *(pToStr) = fileBuf;
 
   int i = 0, p = 1;
-  int cntChar = getc(file);
-  while(cntChar != EOF){
+  for(i = 0; i < TextSize; i++){
 
-		if(cntChar == '\n'){
-		
-			*(fileBuf + i++) = '\0';
-      
-			pToStr = (char**) realloc(pToStr, (p + 2) * sizeof(*pToStr));
-		
-			*(pToStr + p++) = (fileBuf + i);
-		}
-		else{	
+  	if(*(fileBuf + i) == '\n'){
 
-			*(fileBuf + i++) = cntChar;
-		}
+			*(fileBuf + i) = '\0';
 
-		cntChar = getc(file);
-	}
+			pToStr = (char**) realloc(pToStr, (p + 1) * sizeof(*pToStr));
 
-	*nOfStr = p - 1;
+			*(pToStr + p++) = fileBuf + (i + 1);
+  	}
+  }
+
+  *nOfStr = p - 1;
 
   return pToStr;
 }
@@ -78,7 +116,7 @@ void Test_ReadInBuf(){
 
 	int nOfStr = 0;
 
-	pToStr = ReadInBuf(pToStr, fileBuf, Text, &nOfStr);
+	pToStr = ReadInBuf(pToStr, fileBuf, InputText, &nOfStr);
 
   PutToFile(OutputText, pToStr, nOfStr);
 

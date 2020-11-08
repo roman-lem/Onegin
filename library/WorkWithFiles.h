@@ -3,19 +3,30 @@
 #include <sys/stat.h>
 
 /**
+	* @brief This func get size of files
+	*
+	*	@param fileName - Name of file
+	*
+	* @return Size of file in chars
+	*/
+
+int sizeOfFile(char* fileName);
+
+/**
 	* @brief This func read text from file, and write it to buffer
 	*
 	*	@param pToStr - Array of pointers on strings
 	*
 	*	@param fileBuf - Buffer
 	*
-	*	@param file - File 
+	*	@param fileName - Name of file 
 	*
 	* @param nOfStr - Pointer on variable, where need save number of strings
 	*
 	* @return New pointer on array of pointers
 	*/
-char** ReadInBuf(char** pToStr, char* fileBuf, FILE *file, int* nOfStr);
+
+char** ReadInBuf(char** pToStr, char* fileBuf, char* fileName, int* nOfStr);
 
 /**
 	* @brief Unit test for ReadInBuf()

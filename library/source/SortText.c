@@ -2,70 +2,10 @@
 
 //-----------------------------
 
-void TextSort(char** pToStr, int begin, int end){
+int StrCmp(const void* arg1, const void* arg2){
 
-	if(begin < end){
-		int left = begin, right = end;
-		char* middle = *(pToStr + (left + right) / 2);
-
-		while(left <= right){
-
-
-
-			while( StrCmp(middle, *(pToStr + left)) == 1) 
-				left++;
-
-			while( StrCmp(middle, *(pToStr + right)) == 2)
-				right--;
-
-			if(left <= right){
-
-				char* temp = *(pToStr + left);
-
-				*(pToStr + left) = *(pToStr + right);
-
-				*(pToStr + right) = temp;
-
-				left++;
-				right--;
-			}
-		}
-
-		TextSort(pToStr, begin, right);
-		TextSort(pToStr, left,  end);
-	}
-}
-
-//-----------------------------
-
-void Test_TextSort(){
-
-	char** pToStr = (char**) calloc(5, sizeof(*pToStr));
-
-	*(pToStr + 0) = "e";
-	*(pToStr + 1) = "d";
-	*(pToStr + 2) = "c";
-	*(pToStr + 3) = "b";
-	*(pToStr + 4) = "a";
-
-	TextSort(pToStr, 0, 4);
-
-	int i = 0;
-	for(i = 0; i < 5; i++){
-
-		printf("%s", *(pToStr + i));
-	}
-
-	printf("\n");
-
-	free(pToStr);
-
-	return;
-}
-
-//-----------------------------
-
-int StrCmp(char* str1, char* str2){
+	char* str1 = *((char**) arg1);
+	char* str2 = *((char**) arg2);
 
 	int s1 = 0, s2 = 0;
 	for(s1 = 0, s2 = 0; ; s1++, s2++){
@@ -89,13 +29,13 @@ int StrCmp(char* str1, char* str2){
 			return 1;
 
 		if(str2[s2] == '\0')
-			return 2;
+			return -1;
 
 		if(Upper(str1[s1]) - Upper(str2[s2]) > 0)
 			return 1;
 
 		if(Upper(str1[s1]) - Upper(str2[s2]) < 0)
-			return 2;
+			return -1;
 	}
 }
 
@@ -106,7 +46,7 @@ int Test_StrCmp(){
 	char* str1 = "aaaaaa";
 	char* str2 = "aaaaaa";
 
-	if(StrCmp(str1, str2) == 0)
+	if(StrCmp(&str1, &str2) == 0)
 		return 1;
 	else
 		return 0;
@@ -114,7 +54,7 @@ int Test_StrCmp(){
 	str1 = "aaaaa";
 	str2 = "aaaaaa";
 
-	if(StrCmp(str1, str2) == 2)
+	if(StrCmp(&str1, &str2) == -1)
 		return 1;
 	else
 		return 0;
@@ -122,7 +62,7 @@ int Test_StrCmp(){
 	str1 = "aaaaaa";
 	str2 = "aaaaaz";
 
-	if(StrCmp(str1, str2) == 2)
+	if(StrCmp(&str1, &str2) == -1)
 		return 1;
 	else
 		return 0;
@@ -130,7 +70,7 @@ int Test_StrCmp(){
 	str1 = "aaaaaa";
 	str2 = "zzzzz";
 
-	if(StrCmp(str1, str2) == 1)
+	if(StrCmp(&str1, &str2) == 1)
 		return 1;
 	else
 		return 0;
@@ -138,7 +78,7 @@ int Test_StrCmp(){
 	str1 = "a.a.a/a6a7a";
 	str2 = "a a4a a*a5a";
 
-	if(StrCmp(str1, str2) == 0)
+	if(StrCmp(&str1, &str2) == 0)
 		return 1;
 	else
 		return 0;
