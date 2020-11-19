@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include "SortText.h"
 
 /**
 	* @brief Unit test for StrCmp()

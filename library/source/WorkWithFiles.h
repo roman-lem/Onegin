@@ -30,14 +30,12 @@ int sizeOfFile(char* fileName);
 char** ReadInBuf(char** pToStr, char* fileBuf, char* fileName, int* nOfStr);
 
 /**
-	* @brief Unit test for ReadInBuf()
+	* @brief This func check, does str is empty.
 	*
-	*	@note First of all, check that PutToFile() work correctly
+	*	@param pointer to begin of string
 	*
-	* @note Create file "Test_RIB_Input.txt" and fill it. If was created "Test_RIB_Output.txt" with same content
+	* @return 1, if string is empty, 0, if isn't
 	*/
-
-void Test_ReadInBuf();
 
 int StrIsEmpty(char* str);
 
@@ -52,14 +50,6 @@ int StrIsEmpty(char* str);
 void PrintFromArr(char** pToStr, int nOfStr);
 
 /**
-	* @brief Unit test for PrintFromArr()
-	*
-	* @return if this func work correctly, it will print "a\nb\nc\nd\ne\n"
-	*/
-
-void Test_PrintFromArr();
-
-/**
 	* @brief This func write text in file
 	*
 	*	@param fileName - Name of file
@@ -71,10 +61,4 @@ void Test_PrintFromArr();
 
 void PutToFile(char* fileName, char** pToStr, int nOfStr);
 
-/**
-	* @brief Unit test for PutToFile()
-	*
-	* @return if this func work correctly, it will create file "Test_PutToFile.txt" and put "a\nb\nc\nd\ne\n" to it
-	*/
-
-void Test_PutToFile();
+//===============================================================================================================================
